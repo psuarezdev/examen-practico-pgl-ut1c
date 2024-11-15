@@ -49,18 +49,21 @@ fun HomeView() {
         texto = "Soy un alumno",
         avatarResource = R.drawable.avatar3
       )
-      VSpace(12.dp)
       Button(
         onClick = { color = listaColores.random() },
         colors = ButtonDefaults.buttonColors(
-          containerColor = color
-        )
+          containerColor = color,
+          contentColor = alumno3
+        ),
+        modifier = Modifier.fillMaxWidth()
+          .padding(horizontal = 40.dp)
       ) {
         Text(text = "Elegir nuevo color")
       }
       VSpace(8.dp)
       LazyColumn(
         modifier = Modifier.fillMaxWidth()
+          .padding(horizontal = 12.dp)
       ) {
         items(Mensajes.conversationSample) { message ->
           MessageCard(

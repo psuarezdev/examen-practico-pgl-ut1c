@@ -28,12 +28,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import dev.pages.psuarez.examenpglpablosuarez.R
 import dev.pages.psuarez.examenpglpablosuarez.domain.Message
+import dev.pages.psuarez.examenpglpablosuarez.ui.theme.customLightGray
 
 @Composable
 fun MessageCard(msg: Message, avatarResource: Int, expandedColor: Color) {
   var isExpanded by remember { mutableStateOf(false) }
   val surfaceColor by animateColorAsState(
-    if (isExpanded) expandedColor else Color.LightGray,
+    if (isExpanded) expandedColor else customLightGray
   )
 
   Row(modifier = Modifier.padding(all = 8.dp)) {
